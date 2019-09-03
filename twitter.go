@@ -57,6 +57,8 @@ func getTwitterClient() *twitter.Client {
 func Tweet(message string) (*twitter.Tweet, error) {
 	twitter := getTwitterClient()
 
+	log.Printf("Updating Twitter status")
+
 	tweet, resp, err := twitter.Statuses.Update(message, nil)
 
 	if err != nil {
