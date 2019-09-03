@@ -54,7 +54,7 @@ func getTwitterClient() *twitter.Client {
 }
 
 // Tweet tweets a message
-func Tweet(message string) *twitter.Tweet {
+func Tweet(message string) (*twitter.Tweet, error) {
 	twitter := getTwitterClient()
 
 	tweet, resp, err := twitter.Statuses.Update(message, nil)
@@ -62,10 +62,12 @@ func Tweet(message string) *twitter.Tweet {
 	if err != nil {
 		log.Println("Cannot update Twitter status")
 		log.Println(err)
+
+		return nil, err
 	}
 
 	log.Printf("Response \n%+v\n", resp)
 	log.Printf("Tweet \n%+v\n", tweet)
 
-	return tweet
+	return tweet, nil
 }
