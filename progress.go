@@ -8,16 +8,14 @@ import (
 	"github.com/tj/go-progress"
 )
 
-// BSProgressString returns a progress bar made of Unicode symbols
-// for the current progress value of Bikram Sambat
-func BSProgressString() string {
+// ProgressString returns a progress bar made of Unicode symbols
+// for the progress value
+func ProgressString(value int) string {
 	b := progress.NewInt(100)
 
 	b.Width = 15
 	b.StartDelimiter = ""
 	b.EndDelimiter = ""
-
-	value := int(totalProgress())
 
 	b.Template(`{{.Bar}} {{.Percent}}%`)
 	b.ValueInt(value)
@@ -25,8 +23,8 @@ func BSProgressString() string {
 	return b.String()
 }
 
-// totalProgress calculates the floating progress of BS year up until now
-func totalProgress() float32 {
+// TotalProgress calculates the floating progress of BS year up until now
+func TotalProgress() float32 {
 	loc, _ := time.LoadLocation("Asia/Kathmandu")
 	t := time.Now().In(loc)
 
