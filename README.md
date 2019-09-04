@@ -1,10 +1,10 @@
 # Bikram Sambat
 
 <div align="center">
-  <img width="400" src="logo.png" alt="Bikram Sambat Progress">
-</div>
+  <img width="300" src="logo.png" alt="Bikram Sambat Progress">
 
-> A tweet bot that tweets progress of the Nepali Calendar a.k.a Bikram Sambat.
+  <p>A tweet bot that tweets progress of the Nepali Calendar a.k.a Bikram Sambat.</p>
+</div>
 
 ## License
 
