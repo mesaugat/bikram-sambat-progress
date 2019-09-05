@@ -2,9 +2,19 @@ build:
 	docker build -t bikram-sambat-progress .
 
 run:
-	docker run bikram-sambat-progress
+	docker run \
+		-e TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY} \
+		-e TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET} \
+		-e TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN} \
+		-e TWITTER_ACCESS_TOKEN_SECRET=${TWITTER_ACCESS_TOKEN_SECRET} \
+		bikram-sambat-progress
 
 rund:
-	docker run -d bikram-sambat-progress
+	docker run -d \
+		-e TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY} \
+		-e TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET} \
+		-e TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN} \
+		-e TWITTER_ACCESS_TOKEN_SECRET=${TWITTER_ACCESS_TOKEN_SECRET} \
+		bikram-sambat-progress
 
 .DEFAULT_GOAL := build
