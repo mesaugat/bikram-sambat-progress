@@ -8,9 +8,22 @@
 
 ## Prerequisite
 
+- [GNU Make](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_1.html)
 - [Docker](https://docs.docker.com/install/)
 
 ## Usage
+
+Export your [Twitter secrets](https://developer.twitter.com).
+
+```bash
+# Twitter Secrets
+export TWITTER_CONSUMER_KEY="WEbDazCqR6fVERc8SuD4tK5c"
+export TWITTER_CONSUMER_SECRET="BPhmzeZqJ5nfAGGDeEQM8Xrh"
+export TWITTER_ACCESS_TOKEN="9gdteNLPQVw5C9vcBfHR8Kkj"
+export TWITTER_ACCESS_TOKEN_SECRET="5apcG4rbwSKJvXPtPb2yWk54"
+```
+
+And,
 
 ```bash
 $ make build
