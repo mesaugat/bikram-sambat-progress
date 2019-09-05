@@ -22,10 +22,10 @@ type TwitterCredentials struct {
 // https://tutorialedge.net/golang/writing-a-twitter-bot-golang/
 func getTwitterClient() *twitter.Client {
 	creds := TwitterCredentials{
-		AccessToken:       os.Getenv("ACCESS_TOKEN"),
-		AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
-		ConsumerKey:       os.Getenv("CONSUMER_KEY"),
-		ConsumerSecret:    os.Getenv("CONSUMER_SECRET"),
+		AccessToken:       os.Getenv("TWITTER_ACCESS_TOKEN"),
+		AccessTokenSecret: os.Getenv("TWITTER_ACCESS_TOKEN_SECRET"),
+		ConsumerKey:       os.Getenv("TWITTER_CONSUMER_KEY"),
+		ConsumerSecret:    os.Getenv("TWITTER_CONSUMER_SECRET"),
 	}
 
 	config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
