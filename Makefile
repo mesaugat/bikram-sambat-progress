@@ -1,4 +1,4 @@
 build:
-	go build -o bin/bikram-sambat-progress
+	docker build -t bikram-sambat-progress .
 
 .DEFAULT_GOAL := build
