@@ -18,7 +18,7 @@ type TwitterCredentials struct {
 	AccessTokenSecret string
 }
 
-// getTwitterClient uses twitter credentials to give back the twitter client
+// getTwitterClient uses twitter credentials to give back the twitter client.
 // https://tutorialedge.net/golang/writing-a-twitter-bot-golang/
 func getTwitterClient() *twitter.Client {
 	creds := TwitterCredentials{
@@ -34,13 +34,13 @@ func getTwitterClient() *twitter.Client {
 	httpClient := config.Client(oauth1.NoContext, token)
 	client := twitter.NewClient(httpClient)
 
-	// Verify Credentials
+	// Verify credentials
 	verifyParams := &twitter.AccountVerifyParams{
 		SkipStatus:   twitter.Bool(true),
 		IncludeEmail: twitter.Bool(true),
 	}
 
-	// Retrieve the user and verify if the credentials are valid
+	// Retrieve the user and verify if the credentials are valid.
 	user, _, err := client.Accounts.VerifyCredentials(verifyParams)
 
 	if err != nil {
@@ -53,7 +53,7 @@ func getTwitterClient() *twitter.Client {
 	return client
 }
 
-// Tweet tweets a message
+// Tweet tweets a message.
 func Tweet(message string) (*twitter.Tweet, error) {
 	twitter := getTwitterClient()
 
