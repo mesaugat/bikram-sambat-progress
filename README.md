@@ -4,6 +4,7 @@
   <img width="300" src="logo.png" alt="Bikram Sambat Progress">
 
   <p>A tweet bot that tweets progress of the Nepali Calendar a.k.a <a href="https://en.wikipedia.org/wiki/Vikram_Samvat">Bikram Sambat.</a></p>
+  <p><em>Inspired from <a href="https://twitter.com/year_progress">@year_progress</a></em></p>
 </div>
 
 ## Prerequisite
