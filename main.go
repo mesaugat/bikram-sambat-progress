@@ -9,6 +9,9 @@ import (
 // one or smaller than zero it tweets out a progress string. The idea
 // is to only care about jumps from one integer value to another
 // consecutive integer value upto 100.
+//
+// TODO: Questionable if this function should be here. Also, this
+// might be a noob approach.
 func checkBSProgress() {
 	currentProgress := int(TotalProgress())
 	ticker := time.NewTicker(time.Second * 1)
