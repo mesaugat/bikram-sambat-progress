@@ -7,6 +7,10 @@
   <p><em>Inspired from <a href="https://twitter.com/year_progress">@year_progress</a></em></p>
 </div>
 
+## Tweet
+
+![First Tweet](https://i.imgur.com/WFtMHc1.png)
+
 ## Prerequisite
 
 - [GNU Make](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_1.html)
