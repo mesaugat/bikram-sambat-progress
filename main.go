@@ -36,12 +36,14 @@ func checkBSProgress() {
 		// between running progress and current progress is negative.
 		// This is particularly true if running progress comes back
 		// down to zero after reaching 100. In this case, tweet the
-		// progress as 100.
+		// progress as 100 and then as 0.
 		if diff < 0 && int(currentProgress) == 0 {
 			currentProgress = 0
-			progress = ProgressString(100)
+			hundred := ProgressString(100)
+			zero := ProgressString(0)
 
-			Tweet(progress)
+			Tweet(hundred)
+			Tweet(zero)
 		}
 	}
 }
