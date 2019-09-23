@@ -17,4 +17,7 @@ rund:
 		-e TWITTER_ACCESS_TOKEN_SECRET=${TWITTER_ACCESS_TOKEN_SECRET} \
 		bikram-sambat-progress
 
+test:
+	go test -v ./...
+
 .DEFAULT_GOAL := build
