@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/srishanbhattarai/nepcal/dateconv"
+	"github.com/srishanbhattarai/nepcal/nepcal"
 	"github.com/tj/go-progress"
 )
 
@@ -62,14 +62,14 @@ func totalSecondsSpanned(t time.Time) int {
 	min := t.Minute()
 	sec := t.Second()
 
-	// Because dateconv.TotalDaysSpanned() is based on UTC (if system
+	// Because NumDaysSpanned() is based on UTC (if system
 	// time is in UTC), we have a skewed result when calculating
 	// total seconds spanned. For example 2019/09/10 18:15:00 UTC
 	// is 2019/09/11 00:00:00 NST. On the next second, the total
 	// seconds spanned drops to a lower value as total days
 	// spanned still remains the same because of the
 	// +05:45 difference.
-	days, _ := dateconv.TotalDaysSpanned()
+	days := nepcal.FromGregorianUnchecked(time.Now()).NumDaysSpanned()
 
 	// The workaround is to increase the day count by 1
 	// until UTC time reaches a new day (i.e. +5:45)
@@ -90,8 +90,7 @@ func totalSecondsSpanned(t time.Time) int {
 // totalSecondsInYear calculates the total number of seconds in the
 // current BS year.
 func totalSecondsInYear(t time.Time) int {
-	year, _, _ := dateconv.ToBS(t).Date()
-	totalDays, _ := dateconv.TotalDaysInBSYear(year)
+	totalDays := nepcal.FromGregorianUnchecked(t).NumDaysInYear()
 	totalSeconds := totalDays * 24 * 60 * 60
 
 	return totalSeconds
