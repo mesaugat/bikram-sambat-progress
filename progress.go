@@ -69,7 +69,7 @@ func totalSecondsSpanned(t time.Time) int {
 	// seconds spanned drops to a lower value as total days
 	// spanned still remains the same because of the
 	// +05:45 difference.
-	days := nepcal.FromGregorianUnchecked(time.Now()).NumDaysSpanned()
+	days := nepcal.FromGregorianUnchecked(t).NumDaysSpanned()
 
 	// The workaround is to increase the day count by 1
 	// until UTC time reaches a new day (i.e. +5:45)
