@@ -1,4 +1,4 @@
-# Bikram Sambat
+# Bikram Sambat Progress
 
 <div align="center">
   <img width="300" src="progress.png" alt="Bikram Sambat Progress">
