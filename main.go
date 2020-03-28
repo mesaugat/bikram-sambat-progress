@@ -24,7 +24,7 @@ func checkBSProgress() {
 
 		// Increase the current progress value by one if the
 		// difference between running progress and current
-		// progress is greater than or equal to one
+		// progress is greater than or equal to one.
 		if diff >= 1 {
 			currentProgress = currentProgress + 1
 			progress = ProgressString(currentProgress)

@@ -2,25 +2,11 @@ package main
 
 import (
 	"log"
-	"strconv"
 	"time"
 
 	"github.com/srishanbhattarai/nepcal/nepcal"
 	"github.com/tj/go-progress"
 )
-
-var nepaliNumerals = map[string]string{
-	"0": "०",
-	"1": "१",
-	"2": "२",
-	"3": "३",
-	"4": "४",
-	"5": "५",
-	"6": "६",
-	"7": "७",
-	"8": "८",
-	"9": "९",
-}
 
 // ProgressString returns a progress bar made of Unicode symbols
 // for the progress value.
@@ -31,7 +17,7 @@ func ProgressString(value int) string {
 	b.StartDelimiter = ""
 	b.EndDelimiter = ""
 
-	text := convToNepaliNumeral(value)
+	text := ConvToNepaliNumeral(value)
 
 	b.Template(`{{.Bar}} {{.Text}}%`)
 	b.ValueInt(value)
@@ -94,14 +80,4 @@ func totalSecondsInYear(t time.Time) int {
 	totalSeconds := totalDays * 24 * 60 * 60
 
 	return totalSeconds
-}
-
-// convToNepaliNumeral converts arabic numeral to it's nepali counterpart.
-func convToNepaliNumeral(value int) string {
-	text := ""
-	for _, c := range strconv.Itoa(value) {
-		text = text + nepaliNumerals[string(c)]
-	}
-
-	return text
 }
