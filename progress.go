@@ -28,8 +28,7 @@ func ProgressString(value int) string {
 
 // TotalProgress calculates the floating progress of BS year up until now.
 func TotalProgress() float32 {
-	loc, _ := time.LoadLocation("Asia/Kathmandu")
-	t := time.Now().In(loc)
+	t := time.Now().In(time.UTC)
 
 	totalSecondsSpanned := totalSecondsSpanned(t)
 	totalSecondsInYear := totalSecondsInYear(t)
@@ -48,27 +47,21 @@ func totalSecondsSpanned(t time.Time) int {
 	min := t.Minute()
 	sec := t.Second()
 
-	// Because NumDaysSpanned() is based on UTC (if system
-	// time is in UTC), we have a skewed result when calculating
-	// total seconds spanned. For example 2019/09/10 18:15:00 UTC
-	// is 2019/09/11 00:00:00 NST. On the next second, the total
-	// seconds spanned drops to a lower value as total days
-	// spanned still remains the same because of the
-	// +05:45 difference.
-	days := nepcal.FromGregorianUnchecked(t).NumDaysSpanned()
+	bsDate := nepcal.FromGregorianUnchecked(t)
+	days := bsDate.NumDaysSpanned()
+	totalSecondsInYear := totalSecondsInYear(t)
 
-	// The workaround is to increase the day count by 1
-	// until UTC time reaches a new day (i.e. +5:45)
-	// so that total seconds spanned doesn't drop off
-	// inconsistently.
-	skew := 0
+	skew := 5*3600 + 45*60
 
-	// If current time is less than 5:45
-	if hour*60*60+min*60 < 5*60*60+45*60 {
-		skew = 24 * 60 * 60
+	totalSeconds := (days-1)*24*3600 + hour*3600 + min*60 + sec + skew
+
+	// Special case to handle total seconds spanned for the 1st day
+	// of a new year. The total number of seconds will overflow the
+	// total number of seconds in a year for a period of 18:15 - 24:00
+	// i.e. 5 hour 45 minutes.
+	if totalSeconds > totalSecondsInYear {
+		return (hour*60*60 + min*60 + sec) - (18*3600 + 15*60)
 	}
-
-	totalSeconds := (days-1)*24*60*60 + hour*60*60 + min*60 + sec + skew
 
 	return totalSeconds
 }
