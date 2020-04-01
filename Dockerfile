@@ -9,5 +9,4 @@ RUN go build -o bin/bikram-sambat-progress .
 FROM alpine:3.10.2
 WORKDIR /bin
 COPY --from=builder /src/bin /bin
-RUN apk add tzdata
 CMD /bin/bikram-sambat-progress
