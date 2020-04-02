@@ -60,7 +60,7 @@ func totalSecondsSpanned(t time.Time) int {
 	// total number of seconds in a year for a period of 18:15 - 24:00
 	// i.e. 5 hour 45 minutes.
 	if totalSeconds > totalSecondsInYear {
-		return (hour*60*60 + min*60 + sec) - (18*3600 + 15*60)
+		return (hour*3600 + min*60 + sec) - (18*3600 + 15*60)
 	}
 
 	return totalSeconds
@@ -70,7 +70,7 @@ func totalSecondsSpanned(t time.Time) int {
 // current BS year.
 func totalSecondsInYear(t time.Time) int {
 	totalDays := nepcal.FromGregorianUnchecked(t).NumDaysInYear()
-	totalSeconds := totalDays * 24 * 60 * 60
+	totalSeconds := totalDays * 24 * 3600
 
 	return totalSeconds
 }
