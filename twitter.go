@@ -41,14 +41,13 @@ func getTwitterClient() *twitter.Client {
 	}
 
 	// Retrieve the user and verify if the credentials are valid.
-	user, _, err := client.Accounts.VerifyCredentials(verifyParams)
+	_, _, err := client.Accounts.VerifyCredentials(verifyParams)
 
 	if err != nil {
 		log.Println(err)
+
 		panic("Cannot verify Twitter credentials")
 	}
-
-	log.Printf("Twitter User \n%+v\n", user)
 
 	return client
 }
@@ -57,7 +56,7 @@ func getTwitterClient() *twitter.Client {
 func Tweet(message string) (*twitter.Tweet, error) {
 	twitter := getTwitterClient()
 
-	log.Printf("Updating Twitter status")
+	log.Println("Updating Twitter status")
 
 	tweet, resp, err := twitter.Statuses.Update(message, nil)
 
