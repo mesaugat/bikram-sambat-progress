@@ -10,7 +10,8 @@ run:
 		bikram-sambat-progress
 
 rund:
-	docker run -d \
+	docker run -dit \
+		--restart unless-stopped \
 		-e TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY} \
 		-e TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET} \
 		-e TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN} \
