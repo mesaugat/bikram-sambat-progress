@@ -34,12 +34,12 @@ And,
 $ make build
 $ make run
 
-2019/09/05 16:30:56 Total BS Progress is 39.706226
-2019/09/05 16:30:57 Total BS Progress is 39.706230
-2019/09/05 16:30:58 Total BS Progress is 39.706234
-2019/09/05 16:30:59 Total BS Progress is 39.706238
-2019/09/05 16:31:00 Total BS Progress is 39.706238
-2019/09/05 16:31:01 Total BS Progress is 39.706245
+2020/04/06 15:09:26 Bikram Sambat Progress: 98.320859
+2020/04/06 15:09:27 Bikram Sambat Progress: 98.320862
+2020/04/06 15:09:28 Bikram Sambat Progress: 98.320865
+2020/04/06 15:09:29 Bikram Sambat Progress: 98.320868
+2020/04/06 15:09:30 Bikram Sambat Progress: 98.320871
+2020/04/06 15:09:31 Bikram Sambat Progress: 98.320875
 ```
 
 ## License
