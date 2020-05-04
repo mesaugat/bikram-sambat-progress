@@ -9,7 +9,7 @@
 
 ## Tweet
 
-![First Tweet](https://i.imgur.com/WFtMHc1.png)
+![Tweet](https://i.imgur.com/ZCWKnco.png)
 
 ## Prerequisite
 
