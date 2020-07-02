@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"testing"
 	"time"
 
@@ -45,7 +44,7 @@ func TestTotalSecondsInYear(t *testing.T) {
 		{"2079 B.S.", time.Date(2022, 4, 28, 0, 0, 0, 0, time.UTC), 31536000},
 		{"2080 B.S.", time.Date(2023, 4, 28, 0, 0, 0, 0, time.UTC), 31536000},
 		{"2081 B.S.", time.Date(2024, 4, 28, 0, 0, 0, 0, time.UTC), 31622400},
-		{"2090 B.S.", time.Date(2033, 4, 28, 0, 0, 0, 0, time.UTC), 31536000},
+		{"2089 B.S.", time.Date(2032, 4, 28, 0, 0, 0, 0, time.UTC), 31536000},
 	}
 
 	for _, test := range tests {
@@ -78,12 +77,12 @@ func TestTotalSecondSpanned(t *testing.T) {
 		{"5_Hours_46_Minutes_After_Baisakh_1_2076", time.Date(2019, 4, 14, 0, 1, 0, 0, time.UTC), 20760},
 		{"18_Hours_15_Minutes_After_Baisakh_1_2076", time.Date(2019, 4, 14, 12, 30, 0, 0, time.UTC), 65700},
 		{"Jestha_1_2076", time.Date(2019, 5, 15, 18, 15, 0, 0, time.UTC), 2764800},
-		{"Baisakh_1_2077", time.Date(2020, 4, 12, 18, 15, 0, 0, time.UTC), 31622400},
+		{"Baisakh_1_2077", time.Date(2020, 4, 12, 18, 15, 0, 0, time.UTC), 31536000},
+		{"Baisakh_1_2088", time.Date(2021, 4, 13, 18, 15, 0, 0, time.UTC), 31622400},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			log.Print(test.name)
 			totalSeconds := totalSecondsSpanned(test.time)
 
 			assert.Equal(t, test.expectedTotalSeconds, totalSeconds)
