@@ -12,8 +12,10 @@ run:
 
 rund:
 	docker run -dit \
-		--restart unless-stopped \
 		--name bikram-sambat-progress \
+		--log-driver json-file \
+		--log-opt max-size=50m \
+		--restart unless-stopped \
 		-e TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY} \
 		-e TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET} \
 		-e TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN} \
