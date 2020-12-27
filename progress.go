@@ -17,8 +17,6 @@ func CheckBSProgress() {
 	currentProgress := int(TotalProgress())
 	ticker := time.NewTicker(time.Second * 1)
 
-	var progress string
-
 	for range ticker.C {
 		runningProgress := int(TotalProgress())
 		diff := runningProgress - currentProgress
@@ -28,7 +26,7 @@ func CheckBSProgress() {
 		// progress is greater than or equal to one.
 		if diff >= 1 {
 			currentProgress = currentProgress + 1
-			progress = ProgressString(currentProgress)
+			progress := ProgressString(currentProgress)
 
 			Tweet(progress)
 		}
