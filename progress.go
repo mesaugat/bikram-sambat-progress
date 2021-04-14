@@ -52,6 +52,13 @@ func CheckBSProgress() {
 func ProgressString(value int) string {
 	b := progress.NewInt(100)
 
+	// Use dark shade unicode character instead of a filled block
+	// because it increases the total size of the progres bar.
+	//
+	// Check the length of the progress bar of these two tweets:
+	// -->	https://twitter.com/bikram_sambat/status/1382034603372908550
+	// -->  https://twitter.com/bikram_sambat/status/1382034607676219392
+	b.Filled = "▓"
 	b.Width = 15
 	b.StartDelimiter = ""
 	b.EndDelimiter = ""

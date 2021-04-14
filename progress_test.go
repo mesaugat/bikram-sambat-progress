@@ -14,10 +14,10 @@ func TestProgressString(t *testing.T) {
 		expectedStr string
 	}{
 		{"Zero", 0, "░░░░░░░░░░░░░░░ ०%"},
-		{"Twenty One", 21, "████░░░░░░░░░░░ २१%"},
-		{"Thirty Five", 35, "██████░░░░░░░░░ ३५%"},
-		{"Sixty", 60, "█████████░░░░░░ ६०%"},
-		{"Hundred", 100, "███████████████ १००%"},
+		{"Twenty One", 21, "▓▓▓▓░░░░░░░░░░░ २१%"},
+		{"Thirty Five", 35, "▓▓▓▓▓▓░░░░░░░░░ ३५%"},
+		{"Sixty", 60, "▓▓▓▓▓▓▓▓▓░░░░░░ ६०%"},
+		{"Hundred", 100, "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ १००%"},
 	}
 
 	for _, test := range tests {
