@@ -9,7 +9,7 @@
 
 ## Tweet
 
-![Tweet](https://i.imgur.com/ZCWKnco.png)
+![Bikram Sambat Tweet Sample](https://i.imgur.com/1UiWlL9.png)
 
 ## Prerequisite
 
