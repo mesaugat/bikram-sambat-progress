@@ -6,16 +6,14 @@
   <p><em>Follow <a href="https://twitter.com/bikram_sambat">Bikram Sambat</a> on Twitter.</em></p>
 </div>
 
-## Tweet
+## About
 
-![Bikram Sambat Tweet Sample](https://i.imgur.com/1UiWlL9.png)
-
-## Prerequisite
+### Prerequisite
 
 - [GNU Make](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_1.html)
 - [Docker](https://docs.docker.com/install/)
 
-## Usage
+### Usage
 
 Export your [Twitter secrets](https://developer.twitter.com).
 
