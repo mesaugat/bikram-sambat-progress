@@ -1,0 +1,12 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+	"name": "bikram-sambat-progress-devcontainer",
+	"image": "mcr.microsoft.com/devcontainers/go:0-1.20",
+	"containerEnv": {
+		"TWITTER_CONSUMER_KEY": "${localEnv:TWITTER_CONSUMER_KEY}",
+		"TWITTER_CONSUMER_SECRET": "${localEnv:TWITTER_CONSUMER_SECRET}",
+		"TWITTER_ACCESS_TOKEN": "${localEnv:TWITTER_ACCESS_TOKEN}",
+		"TWITTER_ACCESS_TOKEN_SECRET": "${localEnv:TWITTER_ACCESS_TOKEN_SECRET}"
+	}
+}
