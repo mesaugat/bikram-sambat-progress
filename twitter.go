@@ -19,7 +19,7 @@ type TwitterCredentials struct {
 }
 
 // getTwitterClient uses twitter credentials to give back the twitter client.
-// https://tutorialedge.net/golang/writing-a-twitter-bot-golang/
+// TODO: Move to Twitter API v2 (go-twitter is no longer maintained and uses Twitter API v1)
 func getTwitterClient() *twitter.Client {
 	creds := TwitterCredentials{
 		AccessToken:       os.Getenv("TWITTER_ACCESS_TOKEN"),
