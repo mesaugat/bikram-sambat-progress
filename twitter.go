@@ -42,6 +42,8 @@ func Tweet(text string) {
 		log.Printf("Error making http request to post a tweet %s\n", err)
 	}
 
+	defer resp.Body.Close()
+
 	body, _ := ioutil.ReadAll(resp.Body)
 
 	log.Printf("Posted a Tweet")
