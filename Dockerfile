@@ -9,4 +9,4 @@ RUN go build -o bin/bikram-sambat-progress .
 FROM alpine:3.18
 WORKDIR /bin
 COPY --from=builder /src/bin /bin
-CMD /bin/bikram-sambat-progress
+CMD ["/bin/bikram-sambat-progress"]

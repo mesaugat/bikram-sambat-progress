@@ -1,5 +1,5 @@
 build:
-	docker build -t bikram-sambat-progress .
+	docker buildx build -t bikram-sambat-progress .
 
 run:
 	docker run \
